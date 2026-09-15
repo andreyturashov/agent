@@ -1,0 +1,70 @@
+# ==============================================================================
+# Git Ignore for `agent` repository (with `agent-core` and sub-projects)
+# ==============================================================================
+# In git, unanchored rules (without leading slashes) apply recursively at the root
+# and inside any subdirectories (like agent-core/.venv/, agent-core/.env, etc.)
+
+# --- Virtual Environments & Dependencies ---
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+
+# --- Build & Distribution Artifacts ---
+dist/
+build/
+*.egg-info/
+wheels/
+*.so
+*.dylib
+
+# --- Python Bytecode & Runtime Caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Environment Variables & Secrets ---
+# Prevents committing credentials both in root and in agent-core
+.env
+.env.*
+.env.local
+!.env.example
+!.env.*.example
+
+# --- Testing, Coverage & Linters ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+
+# Type checking and linter caches
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# --- OS Specific Files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# --- Editors & IDEs ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.idea/
+
+# --- Local Databases & Logs ---
+*.sqlite
+*.sqlite3
+*.db
+*.log
