@@ -12,4 +12,24 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pre-commit>=4.6.2",
+    "ruff>=0.16.7",
 ]
+
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # Pyflakes (unused variables, imports)
+    "I",    # isort (import sorting)
+    "B",    # flake8-bugbear (common bug patterns)
+    "UP",   # pyupgrade (modern Python syntax)
+]
+ignore = []
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
