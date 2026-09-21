@@ -59,4 +59,4 @@ jobs:
       - name: Add coverage to GitHub Job Summary
         run: |
           echo "### 📊 Test Coverage" >> $GITHUB_STEP_SUMMARY
-          uv run coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+          uv run coverage report -m --format=markdown >> $GITHUB_STEP_SUMMARY
